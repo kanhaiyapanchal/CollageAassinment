@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Data</title>
+
+</head>
+
+<body>
+    <center>
+        <section id="dataform">
+            <form action="" id="formdata">
+                <h2>Enter Resume Details</h2>
+                <label for="name">Full name</label>
+                <input type="text" id="fname" required><br><br>
+
+                <label for="name">Age</label>
+                <input type="number" id="age" required><br><br>
+
+                <label for="name">Gender</label>
+                <input type="radio" id="gender" name="gender" value="male" required> Male
+                <input type="radio" id="gender" name="gender" value="female" required>Female <br><br>
+
+                <label for="name">Designation</label>
+                <input type="text" id="designation" required><br><br>
+
+                <label for="name">Salary</label>
+                <input type="number" id="salary" required><br><br>
+
+                <label for="name">Location</label>
+                <select id="location" required>
+                    <option value="Ahemdabad"> Ahemdabad</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Ujjain">Ujjain</option>
+                    <option value="Ratlam">Ratlam</option>
+                    <option>New Delhi</option>  
+                    <option>Indore</option>  
+                    <option>Jaipur</option>  
+                    <option>Jodhpur</option>  
+                    <option>Chandigarh</option>  
+                    <option>Mumbai</option>  
+                    <option>Bengaluru</option>  
+                    <option>Lucknow</option>  
+                    <option>Amritsar</option>  
+                </select>
+
+                <br><br>
+
+                <label for="name">Email ID</label>
+                <input type="email" id="email" required><br><br>
+
+                <label for="name"> Date of Joining</label>
+                <input type="date" id="date" required><br><br>
+
+                <label for="name">Contact</label>
+                <input type="tel" id="contact" minlength="9" maxlength="10" required><br>
+                <span id="demo"></span><br><br>
+
+                <button onclick="valueSent()">Sent</button>
+            </form>
+        </section>
+
+    </center>
+    <script>
+        function valueSent() {
+            var contact = document.getElementById("contact").value;
+
+
+            if (isNaN(contact)) {
+                text = "Please Enter Valid Number !!";
+            } else {
+                var name = document.getElementById("fname").value;
+                var email = document.getElementById("email").value;
+                var adrs = document.getElementById("location").value;
+                // alert(name);
+                const data = {
+                    'name': name,
+                    'email': email,
+                    'contact': contact,
+                    'adrs':adrs
+                }
+                localStorage.setItem("employ", JSON.stringify(data));
+
+                window.location.href = "resume.html";
+            }
+            document.getElementById("demo").innerHTML = text;
+
+
+
+        }
+    </script>
+
+    <!-- <script src="resume.js"></script> -->
+
+</body>
+
+</html>

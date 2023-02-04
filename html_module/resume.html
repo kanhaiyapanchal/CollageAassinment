@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .heading {
+            background: #26505a;
+            padding: 12px;
+            color: white;
+            border-radius: 8px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row border border-dark border-2 ps-5 pe-5 pb-5 mt-5">
+            <div class="h2 mt-3 text-center"> Resume</div>
+            <div class="p-4">
+                <div class="h3" id="main">Rohit Singh</div>
+                <div class="h6">Email: <span id="email"></span></div>
+                <div class="p">Mob No: +91 <span id="contact"></span></div>
+                <div class="p"><span id="location"></span> India </div>
+            </div>
+            <hr>
+            <div style="text-align:justify">
+                <h5 class="heading">Objective </h5>
+                <p>As a web developer, my objective is to create user-friendly and efficient websites that are visually
+                    appealing and easy to navigate. I utilize my skills in HTML, CSS, JavaScript, and PHP to develop
+                    websites that meet all the requirements of the client. I am also comfortable working with different
+                    content management systems (CMS) such as WordPress, Joomla!, and Drupal. With my Full Stack
+                    Developer course expertise, I am confident that I can apply these skills to a Web Developer Role,
+                    and would like the opportunity to work with more complex codebases.
+
+                </p>
+            </div>
+
+            <div class="">
+                <h5 class="heading">Educations</h5>
+                <ul>
+                    <li>M.Tech, Mandsaur University 2022-24</li>
+                    <li>B.Tech, Harvard University 2018-22</li>
+                    <li>12th , HSC Ujjain 2018</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="heading">Experience </h5>
+                <ul>
+                    <li>I have 2 year Experience at RadixWeb</li>
+                    <li>Currenly I am working as full stack Developer</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="heading">Projects :</h5>
+                <strong>Naturegenic</strong>
+                <p>Nature genic is a organic product base E-commerce website where user can buy any organic product </p>
+            </div>
+
+            <div>
+                <h5 class="heading">Technical Skills </h5>
+                <ul>
+                    <li>Node, PHP, MySql</li>
+                    <li>Html, CSS, JavaScript, React, Vue.js</li>
+                </ul>
+            </div>
+            <div class="">
+                <h5 class="heading">Professional cerificate </h5>
+                <p>Computer Science from CS50, Harvard University </p>
+            </div>
+            <hr>
+            <div>
+                <h5 class="heading">Video Short Resume</h5>
+                <iframe width="100%" height="500px" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+                </iframe>
+            </div>
+
+
+
+        </div>
+    </div>
+    <script>
+        var fname = document.getElementById("main");
+        var email = document.getElementById("email");
+        var contact = document.getElementById("contact");
+        var adrs = document.getElementById("location");
+
+        var a = localStorage.getItem("employ");
+        data = JSON.parse(a);
+        fname.innerHTML = data.name;
+        email.innerHTML = data.email;
+        adrs.innerHTML = data.adrs;
+        contact.innerHTML = data.contact;
+
+
+    </script>
+
+</body>
+
+</html>
